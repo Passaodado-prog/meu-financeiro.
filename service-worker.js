@@ -1,4 +1,4 @@
-const CACHE_NAME = 'meu-financeiro-shell-v9-recorrencia-cartao';
+const CACHE_NAME = 'meu-financeiro-shell-v10-faturas-agrupadas';
 const APP_SHELL = [
   './index.html',
   './manifest.webmanifest',
