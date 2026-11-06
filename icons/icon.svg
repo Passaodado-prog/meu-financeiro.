@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#171b35"/><stop offset="1" stop-color="#0d1324"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#927bff"/><stop offset="1" stop-color="#3b8fe8"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+</defs>
+<rect width="512" height="512" rx="112" fill="url(#bg)"/>
+<circle cx="256" cy="244" r="166" fill="#5d58d9" opacity=".20" filter="url(#shadow)"/>
+<rect x="91" y="91" width="330" height="330" rx="92" fill="url(#accent)"/>
+<path d="M145 326 L213 258 L263 294 L361 184" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M322 184 H361 V223" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M146 354 H365" stroke="#ffffff" stroke-opacity=".38" stroke-width="13" stroke-linecap="round"/>
+<circle cx="145" cy="326" r="12" fill="#fff"/><circle cx="213" cy="258" r="12" fill="#fff"/><circle cx="263" cy="294" r="12" fill="#fff"/>
+</svg>
