@@ -1,4 +1,4 @@
-const CACHE_NAME = 'meu-financeiro-shell-v1';
+const CACHE_NAME = 'meu-financeiro-shell-v8-sem-mascote';
 const APP_SHELL = [
   './index.html',
   './manifest.webmanifest',
@@ -36,9 +36,7 @@ self.addEventListener('fetch', (event) => {
       const cache = await caches.open(CACHE_NAME);
       try {
         const response = await fetch(request);
-        if (response && response.ok) {
-          cache.put(new URL('./index.html', self.registration.scope), response.clone()).catch(() => {});
-        }
+        if (response && response.ok) cache.put(new URL('./index.html', self.registration.scope), response.clone()).catch(() => {});
         return response;
       } catch (error) {
         return (await cache.match(request)) || (await cache.match(new URL('./index.html', self.registration.scope))) || Response.error();
@@ -56,7 +54,22 @@ self.addEventListener('fetch', (event) => {
       if (response && response.ok) cache.put(request, response.clone()).catch(() => {});
       return response;
     } catch (error) {
-      return Response.error();
+      return (await cache.match(request)) || Response.error();
     }
+  })());
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  event.waitUntil((async () => {
+    const targetUrl = new URL('./index.html', self.registration.scope).href;
+    const windows = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const client of windows) {
+      if ('focus' in client) {
+        await client.focus();
+        return;
+      }
+    }
+    if (self.clients.openWindow) await self.clients.openWindow(targetUrl);
   })());
 });
