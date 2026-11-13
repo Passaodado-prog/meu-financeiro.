@@ -1,4 +1,4 @@
-const CACHE_NAME = 'meu-financeiro-shell-v13-tipos-fatura-status';
+const CACHE_NAME = 'meu-financeiro-shell-v18-vencimento-fatura-editavel';
 const APP_SHELL = [
   './index.html',
   './manifest.webmanifest',
